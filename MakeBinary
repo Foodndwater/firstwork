@@ -1,0 +1,52 @@
+def makeBinary(num, bitsNum):
+    cBits = []
+    count = 0
+    while count != bitsNum:
+        cBits.append(pow(2, count))
+        count = count+1
+    print(cBits)
+    count = bitsNum-1
+    x = -1
+    Binary = []
+    num = int(num)
+    while x != count-1:
+        if int(num) >= cBits[x]:
+
+            num = num-cBits[x]
+            Binary.append(1)
+        else:
+            Binary.append(0)
+        x = x-1
+    print(Binary)
+    foundOne = False
+    count = bitsNum-1
+    x = -1
+    countingNum = 0
+
+
+    while int(countingNum) != int(bitsNum):
+        if foundOne == True:
+            if Binary[x] == 1:
+                Binary[x] = 0
+            else:
+                Binary[x] = 1
+
+
+
+
+
+
+        if Binary[x] == 1 and foundOne == False:
+            foundOne = True
+        countingNum +=1
+        x = x-1
+
+
+    print(Binary)
+
+
+
+
+
+
+makeBinary(42,8)
